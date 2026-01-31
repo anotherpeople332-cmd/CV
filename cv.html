@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        /* style.css */
+* {
+    font-family: 'Roboto', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f5f7fa;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.container-all {
+    display: flex;
+    max-width: 1000px;
+    width: 100%;
+    margin-top: 40px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+.container-kiri {
+    background-color: #5f6c7b;
+    color: #f0f8ff;
+    padding: 30px;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.foto-profil {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.foto-profil img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #e2e8f0;
+    transition: transform 0.3s ease;
+    filter: grayscale(100);
+    cursor: pointer;
+}
+
+.foto-profil img:hover {
+    transform: scale(1.05);
+    filter: grayscale(0);
+    transition: transform 0.7s ease;
+}
+
+.nama h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: white;
+    text-align: center;
+}
+
+.nama h2 {
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #e2e8f0;
+}
+
+.info-pribadi p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    text-align: justify;
+    color: #e2e8f0;
+}
+
+.keahlihan h3 {
+    font-weight: 700;
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: white;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 5px;
+}
+
+.keahlihan ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.keahlihan li {
+    background-color: rgba(255, 255, 255, 0.1);
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.keahlihan li:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.kontak h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: white;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 5px;
+}
+
+.kontak p {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #e2e8f0;
+}
+
+.kontak i {
+    color: #e2e8f0;
+    font-size: 18px;
+    width: 25px;
+    margin-right: 10px;
+}
+
+.container-kanan {
+    background-color: white;
+    width: 60%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.data, .pendidikan, .pengalaman, .hobi, .experience {
+    margin-bottom: 10px;
+}
+
+.data span, .pendidikan span, .pengalaman span, .hobi span, .experience span {
+    display: inline-block;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #2d3748;
+    border-bottom: 3px solid #5f6c7b;
+    padding-bottom: 8px;
+    width: 100%;
+}
+
+.data table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data tr {
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.data tr:last-child {
+    border-bottom: none;
+}
+
+.data td {
+    padding: 12px 5px;
+    font-size: 15px;
+}
+
+.data td:first-child {
+    font-weight: 600;
+    color: #4a5568;
+    width: 40%;
+}
+
+.data td:last-child {
+    color: #2d3748;
+}
+
+.pendidikan ul, .pengalaman ul, .hobi ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.pendidikan li, .pengalaman li, .hobi li {
+    padding: 12px 0;
+    font-size: 15px;
+    color: #2d3748;
+    border-bottom: 1px solid #f1f5f9;
+    position: relative;
+    padding-left: 25px;
+}
+
+.pendidikan li:before, .pengalaman li:before, .hobi li:before {
+    content: "•";
+    color: #6a737e;
+    font-size: 24px;
+    position: absolute;
+    left: 0;
+    top: 10px;
+}
+
+.pendidikan li:last-child, .pengalaman li:last-child, .hobi li:last-child {
+    border-bottom: none;
+}
+
+/* Style untuk Experience agar gambar rapi */
+.experience {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: flex-start;
+}
+
+.experience a {
+    display: inline-block;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    color: black;
+    text-align: center;
+}
+
+.experience a:hover {
+    transform: scale(1.05);
+}
+
+.experience img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #e2e8f0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    filter: grayscale(100);
+}
+.experience img:hover {
+    filter: grayscale(0);
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container-all {
+        flex-direction: column;
+        margin-top: 20px;
+    }
+    
+    .container-kiri, .container-kanan {
+        width: 100%;
+    }
+    
+    .container-kiri {
+        border-radius: 10px 10px 0 0;
+    }
+    
+    .container-kanan {
+        border-radius: 0 0 10px 10px;
+    }
+    
+    .nama h1 {
+        font-size: 24px;
+    }
+    
+    .data span, .pendidikan span, .pengalaman span, .hobi span, .experience span {
+        font-size: 22px;
+    }
+    
+    .experience {
+        justify-content: center;
+    }
+    
+    .experience img {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container-kiri, .container-kanan {
+        padding: 20px;
+    }
+    
+    .foto-profil img {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .nama h1 {
+        font-size: 22px;
+    }
+    
+    .data td {
+        display: block;
+        width: 100%;
+        padding: 8px 0;
+    }
+    
+    .data td:first-child {
+        width: 100%;
+        font-weight: 700;
+        margin-top: 10px;
+    }
+    
+    .data tr {
+        border-bottom: none;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #e2e8f0;
+    }
+    
+    .experience img {
+        width: 100px;
+        height: 100px;
+    }
+}
+    </style>
+</head>
+
+<body>
+    <div class="container-all">
+        <div class="container-kiri">
+            <div class="foto-profil">
+                <img src="./gambar.jpg/WhatsApp Image 2025-12-24 at 17.14.33.jpeg" alt="Foto Profil">
+            </div>
+            <div class="nama">
+                <h1>Rizqi Latif Wibowo</h1>
+                <h2>Lulusan baru</h2>
+            </div>
+            <div class="info-pribadi">
+                <p>
+                    Lulusan MIT SAQU Ibnu Mas'ud Yogyakarta . Yang memiliki minat besar dalam bidang teknologi.
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga magni aliquam hic aperiam. Repudiandae nemo, magni repellendus neque alias reiciendis. Laudantium eligendi et ut architecto incidunt corporis iusto aperiam a.
+
+                </p>
+                <div class="keahlihan">
+                    <h3>Keahlian</h3>
+                    <ul>
+                        <li>KickBoxing</li>
+                        <li>Boxing</li>
+                        <li>Olahraga</li>
+                        <li>Yang Bermanfaat...</li>
+                    </ul>
+                </div>
+                <div class="kontak">
+                    <h1>Kontak</h1>
+                    <p><i class="fa-solid fa-phone"></i> 082233445566</p>
+                    <p><i class="fa-solid fa-location-dot"></i> Yogyakarta, Yogyakarta City, Special Region of
+                        Yogyakarta</p>
+                    <p><i class="fa-solid fa-earth-americas"></i>Indonesia</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-kanan">
+            <div class="data">
+                <span>Data Pribadi</span>
+                <table>
+                    <tr>
+                        <td>Tempat</td>
+                        <td>:Surakarta 6 februari 2010</td>
+                    </tr>
+                    <tr>
+                        <td>Jenis Kelamin</td>
+                        <td>:Laki-laki</td>
+                    </tr>
+                    <tr>
+                        <td>Agama</td>
+                        <td>:Islam</td>
+                    </tr>
+                    <tr>
+                        <td>Status</td>
+                        <td>:Belum Menikah</td>
+                    </tr>
+                    <tr>
+                        <td>Kewarganegaraan</td>
+                        <td>:Indonesia</td>
+                    </tr>
+                    <tr>
+                        <td>alamat</td>
+                        <td>: Mantrijeron, Yogyakarta, Yogyakarta City, Special Region of
+                        Yogyakarta</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="pendidikan">
+                <span>Pendidikan</span>
+                <ul>
+                    <li> SAQU Ibnu Masud (2022-2024)</li>
+                    <li>PPQITA (??)</li>
+                </ul>
+            </div>
+            <div class="pengalaman">
+                <span>Pengalaman</span>
+                <ul>
+                    <li>Magang di Halodoc (2023)</li>
+                    <li>Relawan di PMI (2022)</li>
+                </ul>
+            </div>
+            <div class="hobi">
+                <span>Hobi</span>
+                <ul>
+                    <li>Boxing</li>
+                    <li>Kick Boxing</li>
+                    <li>Silat</li>
+                </ul>
+            </div>
+            <div class="experience">
+                <span>Experience</span>
+                <a href="umur.html">
+                    <img src="./gambar.jpg/download (4).jpg" alt="Lihat Umur">
+                    <p>Lihat Umur</p>
+                </a>
+                <a href="sederhana.html">
+                    <img src="./gambar.jpg/download (2).jpg" alt="Kalkulator">
+                    <p>Kalkulator</p>
+                </a>
+                <a href="case.html">
+                    <img src="./gambar.jpg/download (3).jpg" alt="Case">
+                    <p>Case</p>
+                </a>
+                <a href="tenary.html">
+                    <img src="./gambar.jpg/download.jpg" alt="Tenary">
+                    <p>Tenary</p>
+                </a>
+                <a href="regfrom.html">
+                    <img src="./gambar.jpg/download (22).jpg" alt="Register Form">
+                    <p>Register Form</p>
+                </a>
+                <a href="bmi.html">
+                    <img src="./gambar.jpg/download (21).jpg" alt="BMI">
+                    <p>BMI</p>
+                </a>
+                <a href="gambar.html">
+                    <img src="./gambar.jpg/gambar1.png" alt="Gambar">
+                    <p>Gambar</p>
+                </a>
+                <a href="sederhana.html">
+                    <img src="./gambar.jpg/download (7).jpg" alt="Kalkulator Sederhana">
+                    <p>Kalkulator Sederhana</p>
+                </a>
+                <a href ="filmmum.html">
+                    <img src="https://picsum.photos/200/300?random=1" alt="film">
+                    <p>Film</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
